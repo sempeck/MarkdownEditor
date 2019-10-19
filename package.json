@@ -1,0 +1,13 @@
+{
+  "name": "editor",
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^6.0.12",
+    "simplemde": "^1.11.2"
+  },
+  "scripts": {
+    "start": "electron main.js"
+  }
+}

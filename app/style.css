@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Cousine:400,400i,700,700i&display=swap&subset=latin-ext');
+
+/* @import url('fonts/=Cousine:400,400i,700,700i&display=swap&subset=latin-ext'); */
+
+
+
+body {
+  background: #ececec;
+  color: #1C1C1C;
+  font-family: 'Cousine', monospace;
+  padding: 30px;
+  font-size: 1.2em;
+}
+
+.CodeMirror {
+    background: #ececec;
+    border: none;
+    margin: auto;
+    width: 70%;
+    height: 50%;
+}
+
+.CodeMirror-cursors {
+    caret-color: #00BAFF;
+}
+
+.editor-statusbar {
+    background: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.editor-statusbar span {
+    margin-right: 3em;
+}
+
+/* NAWIGACJA *************************/
+.sidebar {
+    height: 100%; 
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+  }
+  
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    white-space: nowrap;
+  }
+  
+.sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+.openbtn {
+    font-size: 15px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #959694;
+    padding: 5px 10px;
+    border: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 30px;
+    width: 35px;
+  }
+  
+:focus {
+    outline: 0;
+}
+
+.openbtn:hover {
+    background-color: #444;
+    height: 30px;
+    width: 35px;
+}
+ 
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+  
+/* @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+} */
+
+  /* KONIEC NAWIGACJI ****************/
