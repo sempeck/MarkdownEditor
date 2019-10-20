@@ -10,6 +10,7 @@ body {
   font-family: 'Cousine', monospace;
   padding: 30px;
   font-size: 1.2em;
+  
 }
 
 .CodeMirror {
@@ -18,10 +19,12 @@ body {
     margin: auto;
     width: 70%;
     height: 50%;
+    line-height: 150%;
 }
 
-.CodeMirror-cursors {
-    caret-color: #00BAFF;
+.CodeMirror-cursor {
+    border-left: 3px solid #00BAFF;
+    
 }
 
 .editor-statusbar {
@@ -36,6 +39,20 @@ body {
 .editor-statusbar span {
     margin-right: 3em;
 }
+
+.cm-header-1 {
+    font-size: 1em !important;
+    position: relative;
+    right: 23px; /* ukrywanie ### */
+}
+
+.cm-header-2 {
+    font-size: 0.4em !important;
+    color: #959694;
+    position: relative;
+    right: 13px;
+}
+
 
 /* NAWIGACJA *************************/
 .sidebar {

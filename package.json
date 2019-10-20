@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "electron": "^6.0.12",
+    "file-dialog": "^0.0.7",
     "simplemde": "^1.11.2"
   },
   "scripts": {

@@ -1,4 +1,6 @@
 const fs = require('fs');
+const fileDialog = require('file-dialog');
+
 
 // NAWIGACJA **************************
 let nav = false;
@@ -32,7 +34,7 @@ var simplemde = new SimpleMDE({
 	element: document.getElementById("MyID"),
 	forceSync: true,
 	hideIcons: ["guide", "heading"],
-	indentWithTabs: false,
+	indentWithTabs: true,
 	initialValue: "",
 	insertTexts: {
 		horizontalRule: ["", "\n\n-----\n\n"],
@@ -42,7 +44,7 @@ var simplemde = new SimpleMDE({
 	},
 	lineWrapping: true,
 	parsingConfig: {
-		allowAtxHeaderWithoutSpace: true,
+		allowAtxHeaderWithoutSpace: false,
 		strikethrough: false,
 		underscoresBreakWords: true,
 	},
@@ -57,7 +59,7 @@ var simplemde = new SimpleMDE({
 
 		return "Loading...";
 	},
-	promptURLs: true,
+	promptURLs: false,
 	renderingConfig: {
 		singleLineBreaks: false,
 		codeSyntaxHighlighting: true,
@@ -89,18 +91,42 @@ var simplemde = new SimpleMDE({
 
 // SAVE FILE **************************
 
-function saveFile () {
-    let dane = simplemde.value();// document.getElementById('MyID').value;
-    fs.writeFile('temp.md', dane, (err) => {
-        if (err) console.log(err);
-        console.log('Zapisane!');
-    });
-}
+// function saveFile () {
+//     let dane = simplemde.value();
+//     fs.writeFile('temp.md', dane, (err) => {
+//         if (err) console.log(err);
+//         console.log('Zapisane!');
+//     });
+// }
 
 // OPEN FILE **************************
 
-function openFile () {
-    fs.readFile("temp2.md", function(err, buf) {
-        simplemde.value(buf.toString());
-    });
-};
+// function openFile () {
+//     fs.readFile("temp2.md", function(err, buf) {
+//         simplemde.value(buf.toString());
+//     });
+// };
+
+// FILE OPEN & SAVE *******************
+
+function openFile() {
+    fileDialog()
+        .then(file => {
+            var plik = file[0]
+            fs.readFile(plik.path, function(err, buf) {
+                simplemde.value(buf.toString());
+            })        
+        })
+    }
+
+function saveFile () {
+    let dane = simplemde.value();
+    fileDialog()
+        .then(file => {
+            var plikZapisu = file[0]
+            fs.writeFile(plikZapisu.path, dane, (err) => {
+                if (err) console.log(err);
+                console.log('Zapisane!');
+            });
+        }) 
+    }
